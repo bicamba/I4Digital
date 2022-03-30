@@ -20,7 +20,7 @@ export class MainMenuService {
         'icon': 'fas fa-user mr-3'
       },
       {
-        'title': 'Publicaciones',
+        'title': 'Lista publicaciones',
         'url': '/acceso/home/publications',
         'icon': 'fab fa-usps mr-3'
       },

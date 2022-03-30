@@ -1,0 +1,28 @@
+ 
+<!-- Page content holder -->
+<div class="page-content p-1 table-responsive" id="content">
+
+    <header class="title-content shadow">
+        <div class="text-center">
+            <br>
+            <p>Fotos de usuarios</p>
+            <br>
+        </div>
+ 
+    </header>
+ 
+        <div class="row">
+            <div *ngFor="let listAlb of listAlbums" class="col-md-3 shadow">
+                <br>
+                <div style="border-radius: 0px;" class="card text-center">
+                    <div class="card-body"><img width="100" src="{{imgAlb(listAlb.id).url}}" alt=""> </div> 
+                    <div class="card-header" style="background-color: #cf8d13e5; color: white">{{listAlb.title}}</div>
+                  </div>
+            </div>
+      
+
+ 
+</div>
+
+</div>
+

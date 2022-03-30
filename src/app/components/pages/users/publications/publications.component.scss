@@ -1,0 +1,75 @@
+/*
+* Variables declaradas
+*/
+$base-color: #e9ecef;
+$color_base: #cf8d13e5;
+
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+  .title-content {
+    font-size: 18px !important; 
+  }
+
+}
+
+
+
+.title-content {
+  font-size: 25px;
+  //background-color: $base-color !important;
+}
+
+.table {
+  max-width: 100% !important;
+}
+
+select {
+  border-radius: 15px;
+}
+
+.btn-add button {
+  float: right;
+  border-radius: 15px !important;
+  background-color: $color_base !important;
+  color: white !important;
+}
+
+.title-table th:hover {
+  background-color: $color_base !important;
+  color: rgb(0, 0, 0);
+}
+
+.custom-control {
+  input[type="checkbox"]+label::after {
+    background-color: $color_base !important;
+  }
+
+  input[type="checkbox"]:checked+label::before {
+    background-color: #ffffff !important;
+    border-color: #02020238 !important;
+  }
+}
+
+ 

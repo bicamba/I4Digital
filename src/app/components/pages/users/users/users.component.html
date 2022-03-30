@@ -1,0 +1,86 @@
+ 
+<!-- Page content holder -->
+<div class="page-content p-1 table-responsive" id="content">
+
+    <header class="title-content">
+        <div class="text-center shadow">
+            <br>
+            <p>Lista de usuarios</p>
+            <br>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6"> 
+                <input type="text" id="filterData2" name="filterData2"
+                class="form-control form-control-alternative" placeholder="Buscar..."
+                [(ngModel)]="filterData2" (change)="resetPaginator2()">
+            </div>
+        </div>
+    </header>
+ 
+    <div class="table-responsive">
+        <table class="table table-hover table-dark">
+            <thead class="thead-light">
+                <tr class="text-center title-table">
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Nombre de usuario</th>
+                    <th>E-mail</th>
+                    <th>Dirección</th>
+                    <th>Telefono</th>
+                    <th>Sitio web</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="myTable" >
+                <tr class="text-center" *ngFor="let users of listUsers|dataFilterGeneral: filterData2: labelFilter2|paginatorPipe:currentPage2; let i = index">
+                    <td>{{users.id}}</td>
+                    <td>{{users.name}}</td>
+                    <td>{{users.username}}</td>
+                    <td>{{users.email}}</td>
+                    <td>{{users.address.city}} / {{users.address.street}} / {{users.address.suite}}</td>
+                    <td>{{users.phone}}</td> 
+                    <td>{{users.website}}</td> 
+                    <td><button type="button" class="btn btn-danger" (click)="Delete(users)">Eliminar</button></td> 
+                </tr>
+              
+            </tbody>
+        </table> 
+        <div class="divMensajeTable" *ngIf="listUsers.length === 0">
+            <h4 class="center">
+                No hay información disponible
+            </h4>
+        </div>
+
+        <div class="card-footer py-4">
+
+            <nav aria-label="...">
+
+                <ul class="pagination justify-content-end mb-0">
+
+                    <li class="page-item " [ngClass]="{'disabled': currentPage2 === 1}">
+                        <a class="page-link" (click)="previousPaginator2()" tabindex="-1">
+                            <i class="fas fa-angle-left"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item " *ngFor="let pagina of paginateData2"
+                        [ngClass]="{'active': currentPage2 === pagina}" (click)="currentPaginator2(pagina)">
+                        <a class="page-link" href="javascript:void(0)">{{pagina}}</a>
+                    </li>
+
+                    <li class="page-item" [ngClass]="{'disabled': currentPage2 === paginateData2.length}">
+                        <a class="page-link" (click)="nextPaginator2()">
+                            <i class="fas fa-angle-right"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+ 
+</div>
+
+
+
